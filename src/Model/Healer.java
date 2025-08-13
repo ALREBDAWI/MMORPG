@@ -8,9 +8,10 @@ public class Healer extends Person {
     private ArrayList<Healer> healers = new ArrayList<Healer>(); // list of all healers
 
     //constructor
-    public Healer(String pName, String pRace, String pCategory, int pLevel, int pHp, int pHealingPoints) {
-        super(pName, pRace, pCategory, pLevel, pHp);
-        this.healingPoints = getHealingPoints();
+    public Healer(String pName, Race pRace, Category pCategory, int pLevel, int pHp, int pHealingPoints) {
+        super(pName,pCategory, pRace, pLevel, pHp); //in order is in Person class constructor
+        this.setHealingPoints(pHp);
+        healers.add(this); //add healer to healers array
     }
 
     //getter and setter

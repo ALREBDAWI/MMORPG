@@ -8,9 +8,10 @@ public class Warrior extends Person {
     private ArrayList<Warrior> warriors = new ArrayList<Warrior>(); //list of warriors
 
     //constructor
-    public Warrior(String pName, String pRace, String pCategory, int pLevel, int pHp, int pForcePoints) {
-        super(pName, pRace, pCategory, pLevel, pHp);
-        this.forcePoints = getForcePoints();
+    public Warrior(String pName, Race pRace, Category pCategory, int pLevel, int pHp, int pForcePoints) {
+        super(pName ,pCategory,pRace, pLevel, pHp);
+        this.setForcePoints(pForcePoints);
+        warriors.add(this); //add the warrior to warriors array
     }
 
     //getter and setter

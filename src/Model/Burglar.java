@@ -1,7 +1,6 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Burglar extends Person {
 
@@ -9,9 +8,10 @@ public class Burglar extends Person {
     private static ArrayList<Burglar> burglars = new ArrayList<Burglar>(); // create a list of burglars
 
     //constructor
-    public Burglar(String pName, String pRace, String pCategory, int pLevel, int pHp, int pAbilityPoints) {
-        super(pName, pRace, pCategory, pLevel, pHp);
-        this.abilityPoints = getAbilityPoints();
+    public Burglar(String pName, Race pRace, Category pCategory, int pLevel, int pHp, int pAbilityPoints) {
+        super(pName, pCategory,pRace, pLevel, pHp);
+        this.setAbilityPoints(pAbilityPoints);
+        burglars.add(this);
     }
 
     //getter and setter
@@ -20,6 +20,11 @@ public class Burglar extends Person {
     }
     public void setAbilityPoints(int pAbilityPoints) {
         this.abilityPoints = pAbilityPoints;
+    }
+
+    public static void main(String[] args) {
+
+
     }
 
 

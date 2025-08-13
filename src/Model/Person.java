@@ -3,22 +3,13 @@ package Model;
 public class Person {
 
     private String name;
-    private String category;
-    private String race;
+    private Category category;
+    private Race race;
     private int level;
     private int hp; //life power
 
     //constructor
-    public Person() {
-        this.name = "strider";
-        this.category = "warrior";
-        this.race = "human";
-        this.level = 1;
-        this.hp = 100;
-    }
-
-    //constructor
-    public Person(String pName, String pCategory, String pRace, int pLevel, int pHp) {
+    public Person(String pName, Category pCategory, Race pRace, int pLevel, int pHp) {
         this.setName(pName);
         this.setCategory(pCategory);
         this.setRace(pRace);
@@ -27,7 +18,7 @@ public class Person {
     }
 
     //constructor
-    public Person(String pName, String pCategory, String pRace) {
+    public Person(String pName, Category pCategory, Race pRace) {
         this.setName(pName);
         this.setCategory(pCategory);
         this.setRace(pRace);
@@ -43,17 +34,17 @@ public class Person {
         this.name = pName;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return this.category;
     }
-    public void setCategory(String pCategory) {
+    public void setCategory(Category pCategory) {
         this.category = pCategory;
     }
 
-    public String getRace() {
+    public Race getRace() {
         return this.race;
     }
-    public void setRace(String pRace) {
+    public void setRace(Race pRace) {
         this.race = pRace;
     }
 
@@ -85,7 +76,8 @@ public class Person {
 
     //test
     public static void main(String[] args) {
-        Person p1 = new Person("rex", "mex", "tex");
+        Person p1 = new Person("rex", Category.getCategories().get("catIron"), Race.getRaces().get("Elf"), 1, 1);
         System.out.println(p1);
+
     }
 }
