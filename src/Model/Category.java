@@ -2,8 +2,9 @@ package Model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
-public class Category {
+public class Category {    // classe in French
 
     //variables
     private String name;
@@ -49,12 +50,37 @@ public class Category {
         return categories;
     }
 
-
+    @Override
+    public String toString() {
+        return " Category --> name : " + this.getName() + ", weapon : " + this.getWeapon() + ", armor : " + this.getArmor() + "\n";
+    }
     //test
     public static void main(String[] args) {
 
     Category catIron = new Category("iron", "sword", "iron armor");
     categories.put(catIron.getName(), catIron);
-    System.out.println(categories.get("catIron"));
+    Category catBronze = new Category("bronze", "sickle", "bronze armor");
+    categories.put(catBronze.getName(), catBronze);
+        System.out.println(categories.get("iron") +  " " + categories.get("bronze"));
+
+
+        //-----------------------------------------------------------
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of categories: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Enter category name: ");
+            String Name = sc.nextLine();
+            System.out.println("Enter weapon : ");
+            String Weapon =  sc.nextLine();
+            System.out.println("Enter armor : ");
+            String armor =  sc.nextLine();
+            Category.getCategories().put("cat" + Name, new Category(Name, Weapon, armor));
+        }
+        System.out.println(Category.getCategories().keySet().toString());
+
+        //----------------------------------------------------------------------------------
     }
 }

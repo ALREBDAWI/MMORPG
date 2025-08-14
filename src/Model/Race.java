@@ -30,13 +30,13 @@ public class Race {
 
     @Override
     public String toString() {
-        return this.getName();
+        return "race --> " + this.getName();
     }
 
     //test
     public static void main(String[] args) {
-        Race.getRaces().put("Elf", new Race("Legolas"));
-        Race.getRaces().put("Ork", new Race("Urag"));
+        Race.getRaces().put("Elf", new Race("Elf"));
+        Race.getRaces().put("Ork", new Race("Ork"));
         System.out.println(races);
 
     }

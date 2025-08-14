@@ -13,6 +13,12 @@ public class Burglar extends Person {
         this.setAbilityPoints(pAbilityPoints);
         burglars.add(this);
     }
+    //constructor
+    public Burglar(String pName, Race pRace, Category pCategory) {
+        super(pName, pCategory,pRace);
+        this.setAbilityPoints(35);
+        burglars.add(this);
+    }
 
     //getter and setter
     public int getAbilityPoints() {
@@ -22,9 +28,22 @@ public class Burglar extends Person {
         this.abilityPoints = pAbilityPoints;
     }
 
-    public static void main(String[] args) {
-
-
+    @Override
+    public String toString() {
+        return String.format(
+                "Burglar: %s%n" +
+                        "  Race: %s%n" +
+                        "  Category: %s%n" +
+                        "  Level: %d%n" +
+                        "  HP: %d%n" +
+                        "  Force Points: %d",
+                getName(),
+                getRace().getName(),
+                getCategory().getName(),
+                getLevel(),
+                getHp(),
+                getAbilityPoints()
+        );
     }
 
 

@@ -14,12 +14,39 @@ public class Warrior extends Person {
         warriors.add(this); //add the warrior to warriors array
     }
 
+    //constructor
+    public Warrior(String pName, Race pRace, Category pCategory) {
+        super(pName ,pCategory,pRace);
+        this.setForcePoints(35);
+        warriors.add(this); //add the warrior to warriors array
+    }
+
+
+
     //getter and setter
     public int getForcePoints(){
         return this.forcePoints;
     }
     public void setForcePoints(int pForcePoints){
         this.forcePoints = pForcePoints;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Warrior: %s%n" +
+                        "  Race: %s%n" +
+                        "  Category: %s%n" +
+                        "  Level: %d%n" +
+                        "  HP: %d%n" +
+                        "  Force Points: %d",
+                getName(),
+                getRace().getName(),
+                getCategory().getName(),
+                getLevel(),
+                getHp(),
+                getForcePoints()
+        );
     }
 
 }
