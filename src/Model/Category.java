@@ -46,6 +46,19 @@ public class Category {    // classe in French
         this.armor = pArmor;
     }
 
+    static {
+        //creating categories
+        Category cat1 =  new Category("bronze", "sickle", "leather");
+        Category cat2 =  new Category("iron", "sword", "iron");
+        Category cat3 =  new Category("wood", "stick", "branch");
+        Category.getCategories().put(cat1.getName(), cat1);
+        Category.getCategories().put(cat2.getName(), cat2);
+        Category.getCategories().put(cat3.getName(), cat3);
+        /*for (String key : Category.getCategories().keySet()) {
+            System.out.println(Category.getCategories().get(key));
+        }*/
+    }
+
     public static Map<String, Category> getCategories() {
         return categories;
     }
@@ -54,33 +67,5 @@ public class Category {    // classe in French
     public String toString() {
         return " Category --> name : " + this.getName() + ", weapon : " + this.getWeapon() + ", armor : " + this.getArmor() + "\n";
     }
-    //test
-    public static void main(String[] args) {
 
-    Category catIron = new Category("iron", "sword", "iron armor");
-    categories.put(catIron.getName(), catIron);
-    Category catBronze = new Category("bronze", "sickle", "bronze armor");
-    categories.put(catBronze.getName(), catBronze);
-        System.out.println(categories.get("iron") +  " " + categories.get("bronze"));
-
-
-        //-----------------------------------------------------------
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of categories: ");
-        int n = sc.nextInt();
-        sc.nextLine();
-        for (int i = 1; i <= n; i++) {
-            System.out.println("Enter category name: ");
-            String Name = sc.nextLine();
-            System.out.println("Enter weapon : ");
-            String Weapon =  sc.nextLine();
-            System.out.println("Enter armor : ");
-            String armor =  sc.nextLine();
-            Category.getCategories().put("cat" + Name, new Category(Name, Weapon, armor));
-        }
-        System.out.println(Category.getCategories().keySet().toString());
-
-        //----------------------------------------------------------------------------------
-    }
 }

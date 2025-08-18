@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Scanner;
+
 public class Person {
 
     private String name;
@@ -74,10 +76,4 @@ public class Person {
 
     }
 
-    //test
-    public static void main(String[] args) {
-        Person p1 = new Person("rex", Category.getCategories().get("catIron"), Race.getRaces().get("Elf"), 1, 1);
-        System.out.println(p1);
-
-    }
 }

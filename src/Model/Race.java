@@ -24,20 +24,25 @@ public class Race {
         this.name=pName;
     }
 
+    static {
+        //creating fixed races
+        Race race1 = new Race("Elf");
+        Race race2 = new Race("Ork");
+        Race race3 = new Race("Man");
+        Race.getRaces().put("elf", race1);
+        Race.getRaces().put("ork", race2);
+        Race.getRaces().put("man", race3);
+    }
+
     public static Map<String, Race> getRaces() { //get races
         return races;
     }
+
+
 
     @Override
     public String toString() {
         return "race --> " + this.getName();
     }
 
-    //test
-    public static void main(String[] args) {
-        Race.getRaces().put("Elf", new Race("Elf"));
-        Race.getRaces().put("Ork", new Race("Ork"));
-        System.out.println(races);
-
-    }
 }
